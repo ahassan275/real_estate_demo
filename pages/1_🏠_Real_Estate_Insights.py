@@ -5,8 +5,8 @@ import streamlit as st
 import sys
 from pathlib import Path
 
-# Add src to path
-sys.path.append(str(Path(__file__).parent / 'src'))
+# Add src to path (go up one level from pages/ to root, then into src/)
+sys.path.append(str(Path(__file__).parent.parent / 'src'))
 
 from data_loader import RealEstateDataLoader
 from analytics import SalesAnalytics, RentalAnalytics
