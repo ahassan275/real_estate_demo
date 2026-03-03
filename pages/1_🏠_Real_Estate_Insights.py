@@ -59,7 +59,8 @@ st.markdown("""
 @st.cache_data
 def load_data():
     """Load and cache real estate data."""
-    data_path = Path(__file__).parent / 'data' / 'market_data.xlsx'
+    # Go up one level from pages/ to root, then into data/
+    data_path = Path(__file__).parent.parent / 'data' / 'market_data.xlsx'
     loader = RealEstateDataLoader(str(data_path))
     loader.load_all_sheets()  # Preload all sheets
     return loader
